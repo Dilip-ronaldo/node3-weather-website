@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast.js')
 
 const app = express()
 // Define paths for Express config
+const port = process.env.PORT || 3000
 const pubDirPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
@@ -92,7 +93,7 @@ app.get('*', (req, res)=>{
     })
 })
 
-app.listen(3000, () => { //callback to call once the server starts
-    console.log('Server started successfully on port 3000')
+app.listen(port, () => { //callback to call once the server starts
+    console.log('Server started successfully on port '+ port)
 })
 //app.com
